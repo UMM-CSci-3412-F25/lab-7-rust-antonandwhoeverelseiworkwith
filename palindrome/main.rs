@@ -1,14 +1,30 @@
 fn main() {
     println!("{}", palindrome("Hello, world!"));
     println!("{}", palindrome("abcdedcba"));
+    println!("{}", palindrome("cat"));
+    println!("{}", palindrome("book"));
 }
 
 fn palindrome(s: &str) -> String {
+  let mut string = s.to_string();
+  let reversed_string = str_reverse(&string);
+  let palindrome = &mut string;
+
+  palindrome.push_str(&reversed_string);
+  
+  palindrome.to_string()
 
 }
 
 fn str_reverse(s: &str) -> String {
-   
+  let string = s.to_string();
+  let mut reversed_string: String = "".to_string();
+   for c in string.chars().rev(){
+      let c = c.to_string();
+      reversed_string.push_str(&c);
+   }
+
+  reversed_string
 }
 
 /*
