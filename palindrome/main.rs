@@ -1,19 +1,22 @@
 fn main() {
     println!("{}", palindrome("Hello, world!"));
     println!("{}", palindrome("abcdedcba"));
-    println!("{}", palindrome("cat"));
-    println!("{}", palindrome("book"));
+    println!("{}", palindrome("racecar"));
+    println!("{}", palindrome("banana"));
 }
 
 fn palindrome(s: &str) -> String {
-  let mut string = s.to_string();
+
+  let string = s.to_string();
   let reversed_string = str_reverse(&string);
-  let palindrome = &mut string;
 
-  palindrome.push_str(&reversed_string);
-  
-  palindrome.to_string()
-
+  if string == reversed_string {
+    let result = "Yes";
+    result.to_string()
+  } else {
+    let result = "No";
+    result.to_string()
+  }
 }
 
 fn str_reverse(s: &str) -> String {
@@ -23,9 +26,10 @@ fn str_reverse(s: &str) -> String {
       let c = c.to_string();
       reversed_string.push_str(&c);
    }
-
   reversed_string
 }
+
+
 
 /*
 #include <stdlib.h>
