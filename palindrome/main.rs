@@ -8,23 +8,34 @@ fn main() {
 fn palindrome(s: &str) -> String {
 
   let string = s.to_string();
+  //making string a String type
   let reversed_string = str_reverse(&string);
+  //reversing string to compare to the original string
 
   if string == reversed_string {
+    //if the string is the same both forward and backward, then it is a palindrome
     let result = "Yes";
     result.to_string()
+    //changing type from &str to String (desired returned type)
   } else {
+    //any other strings will be rejected
     let result = "No";
     result.to_string()
+    //changing type from &str to String (desired returned type)
   }
 }
 
 fn str_reverse(s: &str) -> String {
   let string = s.to_string();
+  //making string a String type
   let mut reversed_string: String = "".to_string();
+  //starting the reversed string off as empty
    for c in string.chars().rev(){
+    //reversing the characters in string so that the last character appears first (and so on)
       let c = c.to_string();
+      //changing the selected character to a string so that it can be pushed onto the final reversed string
       reversed_string.push_str(&c);
+      //pushing the selected character onto the final reversed string
    }
   reversed_string
 }
