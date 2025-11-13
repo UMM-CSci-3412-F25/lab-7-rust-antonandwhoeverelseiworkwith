@@ -1,7 +1,11 @@
 //TODO: Return the input string without vowels.
 pub fn disemvowel(s: &str) -> String {
-    
+
+    //We first create a mutable string
     let mut string = s.to_string();
+    
+    //Afterwards, we go through each capitalized and uncapitalized vowel and replace any instances
+    //of them with nothing.
     string = string.replace("a", "");
     string = string.replace("e", "");
     string = string.replace("i", "");
@@ -15,6 +19,7 @@ pub fn disemvowel(s: &str) -> String {
     string = string.replace("O", "");
     string = string.replace("U", "");
 
+    //Return the disemvoweled string
     string
 } 
 
